@@ -32,7 +32,7 @@ router.post('/',async(req,res)=>{
             profilepicture:req.body.profilepicture,
         })
     
-    
+        
     const registerd_user = await register.save();
     res.status(200).send({
         message:'Registerd sucessfully',

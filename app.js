@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const bodyparser = require('body-parser');
@@ -7,7 +7,13 @@ const loginroute = require('./routes/login');
 const postsroute = require('./routes/posts');
 const get_profileroute = require('./routes/get_profile');
 const get_profileroute2 = require('./routes/follow');
+const profilepic = require('./routes/updateprofilepic');
 const search = require('./routes/search');
+const fileupload = require('express-fileupload');
+const AWS = require('aws-sdk');
+
+
+app.use(fileupload());
 const corse = require('cors');
 const dotenv = require('dotenv');
 
@@ -23,7 +29,10 @@ app.use('/login',loginroute);
 app.use('/posts',postsroute);
 app.use('/get_profile',get_profileroute);
 app.use('/follow-user',get_profileroute2);
+app.use('/',profilepic);
 app.use('/search',search);
+
+
 //connect to databse
 
 mongoose.connect(process.env.MONGO_URL,
