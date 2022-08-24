@@ -15,6 +15,12 @@ const register = mongoose.Schema({
         type:String,
         require:true,
     },
+    instagramlink:{
+        type:String,
+    },
+    youtubelink:{
+        type:String,
+    },
     profilepicture:{
         type:String,
     },

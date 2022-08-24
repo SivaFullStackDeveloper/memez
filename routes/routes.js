@@ -12,6 +12,8 @@ const schema =joi.object({
     password: joi.string().min(6).required(),
     email: joi.string().min(6).required(),
     profilepicture:joi.string(),
+    youtubelink:joi.string(),
+    instagramlink:joi.string(),
 })
 router.post('/',async(req,res)=>{
     const {error} = schema.validate(req.body);
@@ -30,6 +32,8 @@ router.post('/',async(req,res)=>{
             password:hashedpassword,
             email:req.body.email,
             profilepicture:req.body.profilepicture,
+            youtubelink:req.body.youtubelink,
+            instagramlink:req.body.instagramlink,
         })
     
         
