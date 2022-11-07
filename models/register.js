@@ -21,9 +21,6 @@ const register = mongoose.Schema({
     youtubelink:{
         type:String,
     },
-    profilepicture:{
-        type:String,
-    },
 
     email:{
         type:String,

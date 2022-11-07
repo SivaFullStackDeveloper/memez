@@ -31,7 +31,6 @@ router.post('/',async(req,res)=>{
             name:req.body.name,
             password:hashedpassword,
             email:req.body.email,
-            profilepicture:req.body.profilepicture,
             youtubelink:req.body.youtubelink,
             instagramlink:req.body.instagramlink,
         })
